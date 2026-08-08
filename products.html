@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products: Psymora</title>
+  <meta name="description"
+    content="Track, Lab, and Compass, Psymora's three products for clinics, researchers, and schools.">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'><rect width='300' height='300' fill='%23FAFAF8'/><g transform='translate(23.74,54.34) scale(1.063)'><circle cx='40' cy='90' r='20' fill='none' stroke='%232F3A52' stroke-width='9'/><path d='M62,90 L70,90 L75,78 L82,102 L89,90 L98,90' fill='none' stroke='%232F3A52' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='120' cy='90' r='20' fill='none' stroke='%232F3A52' stroke-width='9'/><path d='M142,90 L150,90 L155,78 L162,102 L169,90 L178,90' fill='none' stroke='%232F3A52' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='200' cy='90' r='22' fill='%232F3A52'/></g></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAFAF8;
+      --bg-alt: #F1EFF6;
+      --ink: #15131F;
+      --ink-soft: #55506B;
+      --ink-faint: #8B87A0;
+      --line: #E3E0EC;
+      --surface: #FFFFFF;
+
+      --accent: #2F3A52;
+      --accent-soft: #DCE2ED;
+      --accent-ink: #FFFFFF;
+
+      --track: #028090;
+      --track-tint: #EAF6F5;
+      --track-dark: #0F2A2D;
+
+      --lab: #4C3F91;
+      --lab-tint: #F1EFF6;
+      --lab-dark: #1E1A33;
+
+      --compass: #D85A30;
+      --compass-tint: #FBEAE0;
+      --compass-dark: #241A17;
+
+      --current: var(--track);
+      --current-tint: var(--track-tint);
+
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+      --mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+      --maxw: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    /* ---------- NAV ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 250, 248, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .wordmark {
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wordmark svg {
+      height: 20px;
+      width: auto;
+      flex-shrink: 0;
+      color: var(--ink);
+    }
+
+    #products,
+    #architecture,
+    #about,
+    #contact {
+      scroll-margin-top: 84px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 9px 18px;
+      border-radius: 3px;
+      transition: background 0.15s ease;
+    }
+
+    .nav-cta:hover {
+      background: #23293A;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 96px 0 88px;
+    }
+
+    .hero-eyebrow {
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(38px, 5.4vw, 64px);
+      line-height: 1.06;
+      letter-spacing: -0.015em;
+      max-width: 15ch;
+    }
+
+    .hero-sub {
+      margin-top: 24px;
+      max-width: 56ch;
+      font-size: 18px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      margin-top: 36px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      padding: 12px 22px;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #23293A;
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink-faint);
+    }
+
+    /* ---------- PIPELINE (signature element) ---------- */
+    .pipeline-block {
+      margin-top: 72px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .domain-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .domain-tab {
+      flex: 1;
+      background: none;
+      border: none;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 15px 10px;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .domain-tab::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--current);
+      transform: scaleX(0);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .domain-tab.active {
+      color: var(--ink);
+    }
+
+    .domain-tab.active::after {
+      transform: scaleX(1);
+    }
+
+    .pipeline-stage-row {
+      display: flex;
+      align-items: stretch;
+      padding: 40px 28px 32px;
+      gap: 0;
+    }
+
+    .stage {
+      flex: 1;
+      text-align: center;
+      padding: 0 6px;
+    }
+
+    .stage-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--current-tint);
+      color: var(--current);
+      border: 1.5px solid var(--current);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: 13px;
+      margin: 0 auto 14px;
+      transition: all 0.3s ease;
+    }
+
+    .stage-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--ink);
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s ease;
+    }
+
+    .stage-connector {
+      flex: 0 0 auto;
+      width: 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-faint);
+      padding-top: 17px;
+      font-size: 15px;
+    }
+
+    .pipeline-caption {
+      padding: 16px 28px 24px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      border-top: 1px solid var(--line);
+      background: var(--bg-alt);
+    }
+
+    @media (max-width: 760px) {
+      .pipeline-stage-row {
+        flex-wrap: wrap;
+        row-gap: 24px;
+      }
+
+      .stage {
+        flex: 1 1 40%;
+      }
+
+      .stage-connector {
+        display: none;
+      }
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      padding: 96px 0;
+    }
+
+    .section-alt {
+      background: var(--bg-alt);
+    }
+
+    .section-head {
+      max-width: 62ch;
+      margin-bottom: 52px;
+    }
+
+    .section-head h2 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(28px, 3.4vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-top: 14px;
+    }
+
+    .section-head p {
+      margin-top: 16px;
+      font-size: 16.5px;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- PRODUCT CARDS ---------- */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      border-radius: 6px;
+      padding: 30px 26px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+    }
+
+    .product-card[data-p="track"] {
+      border-top: 3px solid var(--track);
+    }
+
+    .product-card[data-p="lab"] {
+      border-top: 3px solid var(--lab);
+    }
+
+    .product-card[data-p="compass"] {
+      border-top: 3px solid var(--compass);
+    }
+
+    .status-badge {
+      align-self: flex-start;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 3px;
+      margin-bottom: 18px;
+    }
+
+    .product-card[data-p="track"] .status-badge {
+      background: var(--track-tint);
+      color: var(--track);
+    }
+
+    .product-card[data-p="lab"] .status-badge {
+      background: var(--lab-tint);
+      color: var(--lab);
+    }
+
+    .product-card[data-p="compass"] .status-badge {
+      background: var(--compass-tint);
+      color: var(--compass);
+    }
+
+    .product-name {
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .product-domain {
+      font-size: 13.5px;
+      color: var(--ink-faint);
+      margin-bottom: 16px;
+    }
+
+    .product-desc {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .product-meta {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--ink-faint);
+      line-height: 1.8;
+    }
+
+    .product-meta b {
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---------- ARCHITECTURE ---------- */
+    .arch-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .arch-step {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 24px 20px;
+    }
+
+    .arch-step .n {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-faint);
+      margin-bottom: 10px;
+    }
+
+    .arch-step h3 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .arch-step p {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 900px) {
+      .arch-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .principle-callout {
+      margin-top: 36px;
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      border-radius: 0 6px 6px 0;
+      padding: 22px 26px;
+      font-size: 15px;
+      color: var(--ink-soft);
+      max-width: 68ch;
+    }
+
+    .principle-callout b {
+      color: var(--ink);
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-grid p {
+      color: var(--ink-soft);
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .about-grid p:last-child {
+      margin-bottom: 0;
+    }
+
+    .fact-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .fact-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14.5px;
+    }
+
+    .fact-row .k {
+      color: var(--ink-faint);
+      font-family: var(--mono);
+      font-size: 12.5px;
+    }
+
+    .fact-row .v {
+      color: var(--ink);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact-box {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 8px;
+      padding: 64px 56px;
+      text-align: center;
+    }
+
+    .contact-box .eyebrow {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .contact-box h2 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(26px, 3.6vw, 36px);
+      margin-top: 14px;
+      max-width: 24ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-box p {
+      margin-top: 16px;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 50ch;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15.5px;
+    }
+
+    .contact-actions {
+      margin-top: 32px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-box .btn-primary {
+      background: #fff;
+      color: var(--accent);
+    }
+
+    .contact-box .btn-primary:hover {
+      background: #EDEDED;
+    }
+
+    .contact-box .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #fff;
+    }
+
+    .contact-box .btn-ghost:hover {
+      border-color: #fff;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-social a {
+      color: var(--ink-faint);
+      display: flex;
+      transition: color 0.15s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--ink);
+    }
+
+    .footer-meta {
+      font-size: 12.5px;
+      color: var(--ink-faint);
+      font-family: var(--mono);
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 64px 0 56px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .contact-box {
+        padding: 48px 26px;
+      }
+    }
+  </style>
+  <style>
+    .page-hero {
+      padding: 64px 0 56px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-hero h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(34px, 4.6vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-top: 14px;
+      max-width: 16ch;
+    }
+
+    .page-hero p {
+      margin-top: 18px;
+      max-width: 56ch;
+      font-size: 17px;
+      color: var(--ink-soft);
+    }
+
+    .product-block {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .product-block:last-of-type {
+      border-bottom: none;
+    }
+
+    .pb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .pb-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .pb-name {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 34px;
+      margin: 12px 0 6px;
+    }
+
+    .pb-domain {
+      font-size: 14.5px;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+    }
+
+    .pb-desc {
+      font-size: 16px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .pb-meta-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pb-meta-row {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .pb-meta-row .k {
+      font-family: var(--mono);
+      color: var(--ink-faint);
+      min-width: 88px;
+      flex-shrink: 0;
+    }
+
+    .pb-meta-row .v {
+      color: var(--ink);
+    }
+
+    .pb-flow {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 26px;
+      background: var(--surface);
+    }
+
+    .pb-flow-title {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 18px;
+    }
+
+    .pb-flow-step {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .pb-flow-step:first-of-type {
+      border-top: none;
+    }
+
+    .pb-flow-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .pb-flow-text {
+      font-size: 14px;
+      color: var(--ink-soft);
+      padding-top: 3px;
+    }
+
+    .pb-flow-text b {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .product-block[data-p="track"] .pb-flow-num {
+      background: var(--track-tint);
+      color: var(--track);
+      border: 1.5px solid var(--track);
+    }
+
+    .product-block[data-p="lab"] .pb-flow-num {
+      background: var(--lab-tint);
+      color: var(--lab);
+      border: 1.5px solid var(--lab);
+    }
+
+    .product-block[data-p="compass"] .pb-flow-num {
+      background: var(--compass-tint);
+      color: var(--compass);
+      border: 1.5px solid var(--compass);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a href="index.html" class="wordmark"><svg viewBox="0 0 260 130" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(11,-25)">
+            <circle cx="40" cy="90" r="20" fill="none" stroke="currentColor" stroke-width="9" />
+            <path d="M62,90 L70,90 L75,78 L82,102 L89,90 L98,90" fill="none" stroke="currentColor" stroke-width="4"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="120" cy="90" r="20" fill="none" stroke="currentColor" stroke-width="9" />
+            <path d="M142,90 L150,90 L155,78 L162,102 L169,90 L178,90" fill="none" stroke="currentColor"
+              stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="200" cy="90" r="22" fill="currentColor" />
+          </g>
+        </svg>PSYMORA</a>
+      <ul class="nav-links">
+        <li><a href="products.html" style="color:var(--ink);">Products</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <a href="index.html#contact" class="nav-cta">Partner with us</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="eyebrow">Products</div>
+        <h1>One architecture, three domains.</h1>
+        <p>Each product runs the same discipline: validated assessment, standardized scoring, structured report, human
+          decision, applied to a different field.</p>
+      </div>
+    </section>
+
+    <section class="product-block" data-p="track">
+      <div class="wrap pb-grid">
+        <div>
+          <div class="status-badge" style="background:var(--track-tint); color:var(--track);">Live</div>
+          <div class="pb-name">Track</div>
+          <div class="pb-domain">Mental health screening, for Nigerian clinics</div>
+          <p class="pb-desc">
+            Clinics send PHQ-9, GAD-7, and other validated instruments to patients remotely.
+            Patients complete assessments on their own device, no printing, no scanning.
+            Responses are auto-scored using each instrument's own established clinical rules,
+            with high-risk answers, like suicide-risk items, flagged for the clinician immediately.
+          </p>
+          <div class="pb-meta-list">
+            <div class="pb-meta-row"><span class="k">USER</span><span class="v">Clinics &amp; psychology
+                practices</span></div>
+            <div class="pb-meta-row"><span class="k">INSTRUMENTS</span><span class="v">PHQ-9, GAD-7, and a growing core
+                set</span></div>
+            <div class="pb-meta-row"><span class="k">OUTPUT</span><span class="v">Clinician dashboard with trend
+                history</span></div>
+          </div>
+        </div>
+        <div class="pb-flow">
+          <div class="pb-flow-title">How it works</div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">1</div>
+            <div class="pb-flow-text"><b>Clinic sends</b> a validated instrument via web link or email.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">2</div>
+            <div class="pb-flow-text"><b>Patient completes</b> it remotely, on their own device.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">3</div>
+            <div class="pb-flow-text"><b>Auto-scored</b> against the instrument's own clinical rules, no AI in the
+              scoring.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">4</div>
+            <div class="pb-flow-text"><b>Clinician reviews</b> the dashboard and decides on care.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-block" data-p="lab">
+      <div class="wrap pb-grid">
+        <div>
+          <div class="status-badge" style="background:var(--lab-tint); color:var(--lab);">Coming soon</div>
+          <div class="pb-name">Lab</div>
+          <div class="pb-domain">Cognitive science research, for Nigerian psychology departments</div>
+          <p class="pb-desc">
+            Consulting, build, and hosting for standard cognitive paradigms, including Go/No-Go, Stroop,
+            N-back, and more, tools widely used abroad but rarely accessible to Nigerian
+            researchers and students until now. Every paradigm is version-controlled and reusable
+            across future studies.
+          </p>
+          <div class="pb-meta-list">
+            <div class="pb-meta-row"><span class="k">USER</span><span class="v">Researchers &amp; university labs</span>
+            </div>
+            <div class="pb-meta-row"><span class="k">PARADIGMS</span><span class="v">Go/No-Go, Stroop, N-back, and
+                more</span></div>
+            <div class="pb-meta-row"><span class="k">OUTPUT</span><span class="v">Scored results &amp; downloadable
+                reports</span></div>
+          </div>
+        </div>
+        <div class="pb-flow">
+          <div class="pb-flow-title">How it works</div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">1</div>
+            <div class="pb-flow-text"><b>Consult</b>: we identify the right validated paradigm for your study.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">2</div>
+            <div class="pb-flow-text"><b>Build once</b>: scripted and saved to our repository for reuse.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">3</div>
+            <div class="pb-flow-text"><b>Host &amp; collect</b>: participant data streams to a secure cloud database.
+            </div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">4</div>
+            <div class="pb-flow-text"><b>Score &amp; report</b>: you run the analysis, we hand you clean data.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-block" data-p="compass">
+      <div class="wrap pb-grid">
+        <div>
+          <div class="status-badge" style="background:var(--compass-tint); color:var(--compass);">Coming soon</div>
+          <div class="pb-name">Compass</div>
+          <div class="pb-domain">Career &amp; subject guidance, for Nigerian secondary students</div>
+          <p class="pb-desc">
+            A validated RIASEC interest and aptitude assessment, translated directly into exact
+            WAEC/JAMB subject-combination requirements, before the exam locks a student's path.
+            Works with or without current grades, so a family with no report card yet can still
+            get a real answer.
+          </p>
+          <div class="pb-meta-list">
+            <div class="pb-meta-row"><span class="k">USER</span><span class="v">Schools, tutorial centres &amp;
+                families</span></div>
+            <div class="pb-meta-row"><span class="k">FRAMEWORK</span><span class="v">RIASEC / Holland vocational
+                model</span></div>
+            <div class="pb-meta-row"><span class="k">OUTPUT</span><span class="v">Career matches &amp; subject
+                combination report</span></div>
+          </div>
+        </div>
+        <div class="pb-flow">
+          <div class="pb-flow-title">How it works</div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">1</div>
+            <div class="pb-flow-text"><b>Assessment</b>: a validated interest and aptitude assessment.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">2</div>
+            <div class="pb-flow-text"><b>Academic performance</b>: optional, recommended, never required.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">3</div>
+            <div class="pb-flow-text"><b>Profile &amp; matches</b>: career matches scored using the framework's own
+              rules.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">4</div>
+            <div class="pb-flow-text"><b>Subject combination</b>: translated into exact WAEC/JAMB requirements.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Want to see how it works?</h2>
+          <p>Request a demo of Track, Lab, or Compass, and we'll walk you through exactly how it would work for your
+            clinic, lab, or school.</p>
+          <div class="contact-actions">
+            <a href="mailto:hello@psymora.com?subject=Demo%20request" class="btn btn-primary">Request a demo</a>
+            <a href="index.html" class="btn btn-ghost">Back to home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <a href="index.html" class="wordmark"><svg viewBox="0 0 260 130" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(11,-25)">
+            <circle cx="40" cy="90" r="20" fill="none" stroke="currentColor" stroke-width="9" />
+            <path d="M62,90 L70,90 L75,78 L82,102 L89,90 L98,90" fill="none" stroke="currentColor" stroke-width="4"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="120" cy="90" r="20" fill="none" stroke="currentColor" stroke-width="9" />
+            <path d="M142,90 L150,90 L155,78 L162,102 L169,90 L178,90" fill="none" stroke="currentColor"
+              stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="200" cy="90" r="22" fill="currentColor" />
+          </g>
+        </svg>PSYMORA</a>
+      <ul class="footer-links">
+        <li><a href="products.html">Track</a></li>
+        <li><a href="products.html">Lab</a></li>
+        <li><a href="products.html">Compass</a></li>
+        <li><a href="mailto:hello@psymora.com">Contact</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://linkedin.com/company/psymora" aria-label="Psymora on LinkedIn" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <line x1="7.5" y1="10" x2="7.5" y2="17" />
+            <circle cx="7.5" cy="6.7" r="0.9" fill="currentColor" stroke="none" />
+            <path d="M11.5 17v-4.2c0-1.6 1-2.6 2.4-2.6 1.3 0 2.1.9 2.1 2.6V17" />
+            <line x1="11.5" y1="10" x2="11.5" y2="17" />
+          </svg>
+        </a>
+        <a href="https://x.com/psymora_" aria-label="Psymora on X" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round">
+            <line x1="4" y1="4" x2="20" y2="20" />
+            <line x1="20" y1="4" x2="4" y2="20" />
+          </svg>
+        </a>
+        <a href="index.html" aria-label="Psymora on Facebook" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M14 8.5h-1.5c-1 0-1.5.5-1.5 1.5v2h3l-.4 3h-2.6V21" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="index.html" aria-label="Psymora on Instagram" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+      </div>
+      <div class="footer-meta">psymora.com</div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
