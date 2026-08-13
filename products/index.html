@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products: Psymora</title>
   <meta name="description"
-    content="Track, Lab, and Compass, Psymora's three products for clinics, researchers, and schools.">
+    content="Track, Lab, and Compass for clinics, researchers, and schools, and Map, real AI governance and compliance for regulated teams.">
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'><rect width='300' height='300' fill='%23FAFAF8'/><g transform='translate(23.74,54.34) scale(1.063)'><circle cx='40' cy='90' r='20' fill='none' stroke='%232F3A52' stroke-width='9'/><path d='M62,90 L70,90 L75,78 L82,102 L89,90 L98,90' fill='none' stroke='%232F3A52' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='120' cy='90' r='20' fill='none' stroke='%232F3A52' stroke-width='9'/><path d='M142,90 L150,90 L155,78 L162,102 L169,90 L178,90' fill='none' stroke='%232F3A52' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='200' cy='90' r='22' fill='%232F3A52'/></g></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,10 @@
       --compass: #D85A30;
       --compass-tint: #FBEAE0;
       --compass-dark: #241A17;
+
+      --map: #1E5F8C;
+      --map-tint: #E8F1F7;
+      --map-dark: #14293A;
 
       --current: var(--track);
       --current-tint: var(--track-tint);
@@ -893,6 +897,12 @@
       color: var(--compass);
       border: 1.5px solid var(--compass);
     }
+
+    .product-block[data-p="map"] .pb-flow-num {
+      background: var(--map-tint);
+      color: var(--map);
+      border: 1.5px solid var(--map);
+    }
   </style>
 
 </head>
@@ -926,9 +936,11 @@
     <section class="page-hero">
       <div class="wrap">
         <div class="eyebrow">Products</div>
-        <h1>One architecture, three domains.</h1>
-        <p>Each product runs the same discipline: validated assessment, standardized scoring, structured report, human
-          decision, applied to a different field.</p>
+        <h1>Two competencies, four products.</h1>
+        <p>Track, Lab, and Compass share one architecture: a validated instrument as the foundation, standardized
+          scoring against that instrument's own rules, and a structured report that hands the decision to a human
+          who's qualified to make it. Map runs on the same discipline built on a different foundation, real,
+          current, primary-source law, not a scoring rubric.</p>
       </div>
     </section>
 
@@ -1064,13 +1076,61 @@
       </div>
     </section>
 
+    <section class="product-block" data-p="map" id="map">
+      <div class="wrap pb-grid">
+        <div>
+          <div class="status-badge" style="background:var(--map-tint); color:var(--map);">Live</div>
+          <div class="pb-name">Map</div>
+          <div class="pb-domain">AI governance and compliance, for teams deploying AI in regulated sectors</div>
+          <p class="pb-desc">
+            A genuinely different kind of product from the three above, not a psychometric instrument.
+            Map classifies a proposed AI feature against the real, current data-protection and AI-specific
+            law of every jurisdiction it actually touches, tracks the organizational change work required
+            to actually adopt it, using Kotter's 8 steps and a McKinsey 7S diagnostic, and keeps a real,
+            named audit trail of every attestation and sign-off.
+          </p>
+          <div class="pb-meta-list">
+            <div class="pb-meta-row"><span class="k">USER</span><span class="v">Compliance, legal &amp; executive
+                teams</span></div>
+            <div class="pb-meta-row"><span class="k">COVERAGE</span><span class="v">Nigeria, Kenya, Rwanda, Ghana,
+                Morocco, Egypt, the EU &amp; NIST AI RMF</span></div>
+            <div class="pb-meta-row"><span class="k">OUTPUT</span><span class="v">Jurisdiction checklists, Executive
+                sign-off &amp; audit trail</span></div>
+          </div>
+        </div>
+        <div class="pb-flow">
+          <div class="pb-flow-title">How it works</div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">1</div>
+            <div class="pb-flow-text"><b>Propose</b>: describe the feature and select every jurisdiction its data or
+              users actually touch.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">2</div>
+            <div class="pb-flow-text"><b>Classify</b>: real data-protection and AI-specific checklists generate per
+              jurisdiction, sourced from actual law, never a template.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">3</div>
+            <div class="pb-flow-text"><b>Attest, with real ownership</b>: every item gets a named owner and a real due
+              date, visible in one queue across every initiative.</div>
+          </div>
+          <div class="pb-flow-step">
+            <div class="pb-flow-num">4</div>
+            <div class="pb-flow-text"><b>Sign off</b>: a named Executive reviews every jurisdiction's checklist, and
+              the change-readiness track alongside it, before deployment.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="wrap">
         <div class="contact-box">
           <div class="eyebrow">Get in touch</div>
           <h2>Want to see how it works?</h2>
-          <p>Request a demo of Track, Lab, or Compass, and we'll walk you through exactly how it would work for your
-            clinic, lab, or school.</p>
+          <p>Request a demo of Track, Lab, Compass, or Map, and we'll walk you through exactly how it would work for
+            your clinic, lab, school, or compliance team.</p>
           <div class="contact-actions">
             <a href="mailto:hello@psymora.com?subject=Demo%20request" class="btn btn-primary">Request a demo</a>
             <a href="/index.html" class="btn btn-ghost">Back to home</a>
@@ -1098,6 +1158,7 @@
         <li><a href="/products/">Track</a></li>
         <li><a href="/products/">Lab</a></li>
         <li><a href="/products/">Compass</a></li>
+        <li><a href="/products/#map">Map</a></li>
         <li><a href="mailto:hello@psymora.com">Contact</a></li>
       </ul>
       <div class="footer-social">

@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Psymora: Digital infrastructure for psychological measurement</title>
+  <title>Psymora: Infrastructure for validated assessment and AI governance</title>
   <meta name="description"
-    content="Psymora builds digital infrastructure for psychological measurement, helping clinicians, researchers, and educators run validated assessments and turn results into clear, actionable reports.">
+    content="Psymora builds infrastructure for organizations that have to get high-stakes decisions right, validated psychological assessment for clinics, researchers, and schools, and real, jurisdiction-specific AI governance for compliance teams.">
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'><rect width='300' height='300' fill='%23FAFAF8'/><g transform='translate(23.74,54.34) scale(1.063)'><circle cx='40' cy='90' r='20' fill='none' stroke='%232F3A52' stroke-width='9'/><path d='M62,90 L70,90 L75,78 L82,102 L89,90 L98,90' fill='none' stroke='%232F3A52' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='120' cy='90' r='20' fill='none' stroke='%232F3A52' stroke-width='9'/><path d='M142,90 L150,90 L155,78 L162,102 L169,90 L178,90' fill='none' stroke='%232F3A52' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='200' cy='90' r='22' fill='%232F3A52'/></g></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,10 @@
       --compass: #D85A30;
       --compass-tint: #FBEAE0;
       --compass-dark: #241A17;
+
+      --map: #1E5F8C;
+      --map-tint: #E8F1F7;
+      --map-dark: #14293A;
 
       --current: var(--track);
       --current-tint: var(--track-tint);
@@ -434,6 +438,10 @@
       border-top: 3px solid var(--compass);
     }
 
+    .product-card[data-p="map"] {
+      border-top: 3px solid var(--map);
+    }
+
     .status-badge {
       align-self: flex-start;
       font-family: var(--mono);
@@ -459,6 +467,11 @@
     .product-card[data-p="compass"] .status-badge {
       background: var(--compass-tint);
       color: var(--compass);
+    }
+
+    .product-card[data-p="map"] .status-badge {
+      background: var(--map-tint);
+      color: var(--map);
     }
 
     .product-name {
@@ -766,12 +779,13 @@
     <!-- HERO -->
     <section class="hero">
       <div class="wrap">
-        <div class="hero-eyebrow eyebrow">Digital infrastructure for psychological measurement</div>
-        <h1>Psychological measurement, built like infrastructure.</h1>
+        <div class="hero-eyebrow eyebrow">Infrastructure for high-stakes decisions</div>
+        <h1>High-stakes decisions, built like infrastructure.</h1>
         <p class="hero-sub">
           Psymora helps clinicians, researchers, and educators run validated assessments and
-          turn results into clear, actionable reports, never a black box, and never a verdict
-          we make for them.
+          turn results into clear, actionable reports, and helps compliance and executive teams
+          check an AI feature against the real law that governs it. Never a black box, and never
+          a verdict we make for them.
         </p>
         <div class="hero-actions">
           <a href="#products" class="btn btn-primary">See the products</a>
@@ -784,6 +798,7 @@
             <button class="domain-tab active" data-domain="track" role="tab" aria-selected="true">Clinics</button>
             <button class="domain-tab" data-domain="lab" role="tab" aria-selected="false">Research</button>
             <button class="domain-tab" data-domain="compass" role="tab" aria-selected="false">Education</button>
+            <button class="domain-tab" data-domain="map" role="tab" aria-selected="false">Compliance</button>
           </div>
           <div class="pipeline-stage-row">
             <div class="stage">
@@ -807,7 +822,7 @@
             </div>
           </div>
           <div class="pipeline-caption" id="pipeline-caption">
-            Every Psymora product runs the same architecture. Only the instrument and the decision-maker change.
+            Every Psymora assessment product runs the same architecture. Only the instrument and the decision-maker change.
           </div>
         </div>
 
@@ -818,11 +833,12 @@
     <section id="products">
       <div class="wrap">
         <div class="section-head">
-          <div class="eyebrow">Three products, one architecture</div>
-          <h2>Same pattern. Different domain.</h2>
-          <p>Each product applies the same discipline to a different field: a validated instrument as the foundation,
-            automated scoring against that instrument's own rules, and a structured report that hands the decision to a
-            human who's qualified to make it.</p>
+          <div class="eyebrow">Four products, two competencies</div>
+          <h2>Validated assessment, and AI governance built the same way.</h2>
+          <p>Track, Lab, and Compass share one architecture: a validated instrument as the foundation, automated
+            scoring against that instrument's own rules, and a structured report that hands the decision to a human
+            who's qualified to make it. Map is built with the same discipline, real, current, primary-source law
+            instead of a scoring rubric, but it is a genuinely different kind of product, not a fourth instrument.</p>
         </div>
 
         <div class="products-grid">
@@ -872,6 +888,23 @@
             </div>
           </div>
 
+          <div class="product-card" data-p="map">
+            <div class="status-badge">Live</div>
+            <div class="product-name">Map</div>
+            <div class="product-domain">AI governance &amp; compliance</div>
+            <p class="product-desc">
+              A different kind of product from the three above, not a psychometric instrument.
+              Map classifies a proposed AI feature against the real, current data-protection and
+              AI-specific law of every jurisdiction it touches, tracks the organizational change
+              work required to actually adopt it, and keeps a real, named audit trail of every
+              sign-off.
+            </p>
+            <div class="product-meta">
+              <div><b>User:</b> Compliance, legal &amp; executive teams</div>
+              <div><b>Output:</b> Jurisdiction checklists, sign-off &amp; audit trail</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -880,10 +913,11 @@
     <section id="architecture" class="section-alt">
       <div class="wrap">
         <div class="section-head">
-          <div class="eyebrow">The pattern</div>
+          <div class="eyebrow">The pattern, for our assessment products</div>
           <h2>Validated assessment. Standardized scoring. Structured report. Human decision.</h2>
-          <p>This sequence repeats across every product, on purpose. The science underneath is already established; our
-            job is the plumbing, not the judgment.</p>
+          <p>This sequence repeats across Track, Lab, and Compass, on purpose. The science underneath is already
+            established; our job is the plumbing, not the judgment. Map runs on the same discipline applied to a
+            different foundation, real law instead of a validated instrument, covered on its own <a href="/products/#map">product page</a>.</p>
         </div>
 
         <div class="arch-row">
@@ -929,16 +963,17 @@
             Built in Nigeria, for the gap we kept running into ourselves.
           </h2>
           <p style="margin-top:20px;">
-            Psymora Ltd is a CAC-registered Nigerian company working across AI evaluation,
-            psychometrics, behavioral analytics, and human-AI interaction. Our products all
-            start from the same observation: proven psychological measurement tools exist and
-            work well abroad, but rarely reach the clinics, research labs, and schools that need
-            them here.
+            Psymora Ltd is a CAC-registered Nigerian company working across psychometrics, behavioral
+            analytics, human-AI interaction, and, more recently, AI governance. Track, Lab, and Compass
+            start from the same observation: proven psychological measurement tools exist and work well
+            abroad, but rarely reach the clinics, research labs, and schools that need them here.
           </p>
           <p>
             We don't invent new psychometric science. We build the infrastructure that makes
             existing, validated science usable: locally, affordably, and without asking a
-            clinician, a researcher, or a parent to trust a black box.
+            clinician, a researcher, or a parent to trust a black box. Map applies that same
+            discipline to a different foundation, real, current, jurisdiction-specific law, for
+            organizations that need to deploy AI without guessing at what it actually requires.
           </p>
           <p>
             We're starting in Nigeria because it's the gap we understand best, but the same
@@ -949,9 +984,9 @@
           <div class="fact-list">
             <div class="fact-row"><span class="k">ENTITY</span><span class="v">Psymora Ltd</span></div>
             <div class="fact-row"><span class="k">STATUS</span><span class="v">CAC-registered, Nigeria</span></div>
-            <div class="fact-row"><span class="k">FOCUS</span><span class="v">Psychometrics &amp; measurement
+            <div class="fact-row"><span class="k">FOCUS</span><span class="v">Psychometrics &amp; AI governance
                 infrastructure</span></div>
-            <div class="fact-row"><span class="k">PRODUCTS</span><span class="v">Track · Lab · Compass</span></div>
+            <div class="fact-row"><span class="k">PRODUCTS</span><span class="v">Track · Lab · Compass · Map</span></div>
             <div class="fact-row"><span class="k">MARKET</span><span class="v">Nigeria first, built for Africa</span>
             </div>
           </div>
@@ -965,8 +1000,8 @@
         <div class="contact-box">
           <div class="eyebrow">Get in touch</div>
           <h2>Want to see how it works?</h2>
-          <p>Request a demo of Track, Lab, or Compass, and we'll walk you through exactly how it would work for your
-            clinic, lab, or school.</p>
+          <p>Request a demo of Track, Lab, Compass, or Map, and we'll walk you through exactly how it would work for
+            your clinic, lab, school, or compliance team.</p>
           <div class="contact-actions">
             <a href="mailto:hello@psymora.com?subject=Demo%20request" class="btn btn-primary">Request a demo</a>
             <a href="/index.html#products" class="btn btn-ghost">Explore products</a>
@@ -992,8 +1027,9 @@
         </svg>PSYMORA</a>
       <ul class="footer-links">
         <li><a href="/products/">Track</a></li>
-        <li><a href="products/">Lab</a></li>
+        <li><a href="/products/">Lab</a></li>
         <li><a href="/products/">Compass</a></li>
+        <li><a href="/products/">Map</a></li>
         <li><a href="mailto:hello@psymora.com">Contact</a></li>
       </ul>
       <div class="footer-social">
@@ -1051,6 +1087,12 @@
         tint: 'var(--compass-tint)',
         stages: ['RIASEC ASSESSMENT', 'AUTO-SCORED', 'CAREER REPORT', 'FAMILY DECIDES'],
         caption: "Compass: a validated interest assessment translated into WAEC/JAMB subject guidance; the student and family make the final call."
+      },
+      map: {
+        accent: 'var(--map)',
+        tint: 'var(--map-tint)',
+        stages: ['AI FEATURE PROPOSED', 'CLASSIFIED PER JURISDICTION', 'ATTESTED, WITH EVIDENCE', 'EXECUTIVE SIGNS OFF'],
+        caption: "Map: a proposed AI feature classified against the real, current law of every jurisdiction it touches, attested with evidence, and signed off by a named Executive, never auto-approved."
       }
     };
 
@@ -1062,7 +1104,7 @@
 
     let current = 'track';
     let autoplay = true;
-    const order = ['track', 'lab', 'compass'];
+    const order = ['track', 'lab', 'compass', 'map'];
 
     function setDomain(key, userInitiated) {
       current = key;

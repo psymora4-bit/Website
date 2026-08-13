@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How it works: Psymora</title>
-<meta name="description" content="The same architecture: validated assessment, standardized scoring, structured report, human decision, applied across Track, Lab, and Compass.">
+<meta name="description" content="The same architecture, validated assessment, standardized scoring, structured report, human decision, applied across Track, Lab, and Compass, and a parallel, honestly different process for Map's AI governance work.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'><rect width='300' height='300' fill='%23FAFAF8'/><g transform='translate(23.74,54.34) scale(1.063)'><circle cx='40' cy='90' r='20' fill='none' stroke='%232F3A52' stroke-width='9'/><path d='M62,90 L70,90 L75,78 L82,102 L89,90 L98,90' fill='none' stroke='%232F3A52' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='120' cy='90' r='20' fill='none' stroke='%232F3A52' stroke-width='9'/><path d='M142,90 L150,90 L155,78 L162,102 L169,90 L178,90' fill='none' stroke='%232F3A52' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='200' cy='90' r='22' fill='%232F3A52'/></g></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,10 @@
     --compass: #D85A30;
     --compass-tint: #FBEAE0;
     --compass-dark: #241A17;
+
+    --map: #1E5F8C;
+    --map-tint: #E8F1F7;
+    --map-dark: #14293A;
 
     --current: var(--track);
     --current-tint: var(--track-tint);
@@ -530,6 +534,7 @@
   .compare-table tr[data-p="track"] td.domain-cell { color: var(--track); }
   .compare-table tr[data-p="lab"] td.domain-cell { color: var(--lab); }
   .compare-table tr[data-p="compass"] td.domain-cell { color: var(--compass); }
+  .compare-table tr[data-p="map"] td.domain-cell { color: var(--map); }
   .compare-wrap { overflow-x: auto; }
   @media (max-width: 760px) {
     .compare-table { min-width: 640px; }
@@ -556,13 +561,19 @@
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">How it works</div>
-      <h1>Validated assessment. Standardized scoring. Structured report. Human decision.</h1>
-      <p>This sequence repeats across every Psymora product, on purpose. The science underneath is already established; our job is the plumbing, not the judgment.</p>
+      <h1>Built the same way, on two different foundations.</h1>
+      <p>Track, Lab, and Compass run on a validated instrument: assessed, scored, reported, and handed to a human decision-maker. Map runs on real, current law in that instrument's place, classified, grounded, attested, and signed off by a named Executive. Different foundation, same discipline: build the infrastructure, never invent the underlying standard.</p>
     </div>
   </section>
 
   <section>
     <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The first foundation, Track, Lab &amp; Compass</div>
+        <h2>Four stages, the same every time.</h2>
+        <p>This breakdown is specific to the assessment products. Map's own four stages sit further down this page,
+          built the same way, on a genuinely different foundation.</p>
+      </div>
       <div class="arch-row">
         <div class="arch-step">
           <div class="n">01</div>
@@ -646,12 +657,51 @@
     </div>
   </section>
 
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" style="color:var(--map);">A different pattern, for Map</div>
+        <h2>No instrument here. Real law, in its place.</h2>
+        <p>Map is not a fourth version of the table above. There's no validated instrument to score against, so
+          nothing is auto-scored and there's no clinical or research report. The discipline is the same, build the
+          infrastructure, not the underlying standard, applied to a genuinely different foundation.</p>
+      </div>
+
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>1. Classify</th>
+              <th>2. Ground</th>
+              <th>3. Attest</th>
+              <th>4. Decision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-p="map">
+              <td class="domain-cell">Map</td>
+              <td>Feature classified against every jurisdiction it actually touches</td>
+              <td>Real, current, primary-source data-protection &amp; AI-specific law, not a template</td>
+              <td>Every item gets a named owner, real evidence, and a real due date</td>
+              <td>Executive decides, sign-off carries a real, named audit trail</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px; font-size:13px; color:var(--ink-faint);">
+        Map also tracks the organizational change work required to actually adopt a feature, using Kotter's
+        8 steps and a McKinsey 7S diagnostic, alongside the compliance record, not merged into it.
+      </p>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
       <div class="contact-box">
         <div class="eyebrow">Get in touch</div>
         <h2>Want to see how it works?</h2>
-        <p>Request a demo of Track, Lab, or Compass, and we'll walk you through exactly how it would work for your clinic, lab, or school.</p>
+        <p>Request a demo of Track, Lab, Compass, or Map, and we'll walk you through exactly how it would work for your clinic, lab, school, or compliance team.</p>
         <div class="contact-actions">
           <a href="mailto:hello@psymora.com?subject=Demo%20request" class="btn btn-primary">Request a demo</a>
           <a href="/products/" class="btn btn-ghost">Explore products</a>
@@ -669,6 +719,7 @@
       <li><a href="/products/">Track</a></li>
       <li><a href="/products/">Lab</a></li>
       <li><a href="/products/">Compass</a></li>
+      <li><a href="/products/#map">Map</a></li>
       <li><a href="mailto:hello@psymora.com">Contact</a></li>
     </ul>
     <div class="footer-social">
